@@ -1,6 +1,6 @@
 import { Links } from '@/components/Links';
-import { Typewriter } from '../components/Typewriter';
 import { introduction, links } from '@/data/me';
+import { Typewriter } from '@/components/Typewriter';
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex mb-10">
+        <section className="mb-10 flex">
           <Typewriter snippets={introduction} />
         </section>
 

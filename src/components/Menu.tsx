@@ -13,28 +13,27 @@ const itemVariants: Variants = {
 
 type MenuProps = {
   isOpen: boolean;
-  close: () => void;
   menus: {
     name: string;
     url: string;
   }[];
 };
-export function Menu({ isOpen, close, menus }: MenuProps) {
+export function Menu({ isOpen, menus }: MenuProps) {
   const [isHoverIndex, setIsHoverIndex] = useState(-1);
 
   return (
     <motion.ul
       className="menu"
+      initial={'closed'}
       animate={isOpen ? 'open' : 'closed'}
-      onHoverEnd={close}
       variants={{
         open: {
           clipPath: 'inset(0% 0% 0% 0% round 10px)',
           transition: {
             type: 'spring',
             bounce: 0,
-            duration: 0.7,
-            delayChildren: 0.3,
+            duration: 0.4,
+            delayChildren: 0.2,
             staggerChildren: 0.05,
           },
         },
@@ -43,7 +42,7 @@ export function Menu({ isOpen, close, menus }: MenuProps) {
           transition: {
             type: 'spring',
             bounce: 0,
-            duration: 0.5,
+            duration: 0.4,
           },
         },
       }}

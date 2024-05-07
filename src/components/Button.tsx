@@ -9,7 +9,7 @@ type ButtonProps = {
   icon: string;
   href?: string;
 } & React.ComponentPropsWithRef<typeof motion.button>;
-export const Button = memo(function Button({ href = '#', active, onHover, onClick, icon, ...props }: ButtonProps) {
+export const Button = memo(function Button({ href = '#', active, onHover, onTap, icon }: ButtonProps) {
   return (
     <div className={cn('relative flex w-10 items-center justify-center')}>
       <motion.button
@@ -17,7 +17,7 @@ export const Button = memo(function Button({ href = '#', active, onHover, onClic
         initial={{ opacity: 0.6 }}
         whileHover={{ scale: 1.1, opacity: 1 }}
         onHoverStart={onHover}
-        {...props}
+        onTap={onTap}
       >
         <a href={href} target={href === '#' ? '_self' : '_blank'}>
           {icon && <Icon name={icon} className="h-8 w-8" />}

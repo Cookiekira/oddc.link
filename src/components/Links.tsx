@@ -35,12 +35,12 @@ export function Links(props: LinksProps) {
         icon="menu"
         onHover={() => {
           setIsHoverIndex(100);
-          setIsMenuOpen(true);
         }}
+        onTap={() => setIsMenuOpen(!isMenuOpen)}
         active={isHoverIndex === 100}
       />
 
-      <Menu isOpen={isMenuOpen} close={() => setIsMenuOpen(false)} menus={menus} />
+      <Menu isOpen={isMenuOpen} menus={menus} />
     </div>
   );
 }

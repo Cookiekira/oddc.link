@@ -30,3 +30,18 @@ export const links = [
     icon: 'email',
   },
 ];
+
+export const menus = [
+  {
+    name: 'Blog',
+    url: 'https://craft.oddc.icu',
+  },
+  {
+    name: 'Telegram',
+    url: 'https://t.me/cookiekiraw',
+  },
+  {
+    name: 'Bilibili',
+    url: 'https://space.bilibili.com/6350400',
+  },
+];

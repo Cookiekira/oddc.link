@@ -39,7 +39,7 @@ export function Menu({ isOpen, close, menus }: MenuProps) {
           },
         },
         closed: {
-          clipPath: 'inset(10% 50% 90% 50% round 10px)',
+          clipPath: 'inset(90% 10% 10% 90% round 10px)',
           transition: {
             type: 'spring',
             bounce: 0,
@@ -55,7 +55,7 @@ export function Menu({ isOpen, close, menus }: MenuProps) {
             name={menu.name}
             active={isHoverIndex === index}
             onHover={() => setIsHoverIndex(index)}
-            onClick={() => window.open(menu.url, '_blank')}
+            href={menu.url}
           />
         </motion.li>
       ))}
@@ -67,8 +67,9 @@ type ItemProps = {
   active: boolean;
   onHover: () => void;
   name: string;
+  href?: string;
 } & React.ComponentPropsWithRef<typeof motion.button>;
-export const Item = memo(function Item({ name, active, onHover, onClick, ...props }: ItemProps) {
+export const Item = memo(function Item({ href = '#', name, active, onHover, ...props }: ItemProps) {
   return (
     <div className={cn('relative', 'flex', 'w-full', 'items-center', 'justify-center')}>
       <motion.button
@@ -77,9 +78,11 @@ export const Item = memo(function Item({ name, active, onHover, onClick, ...prop
         initial={{ opacity: 0.6 }}
         whileHover={{ opacity: 1 }}
         onHoverStart={onHover}
-        onClick={onClick}
+        {...props}
       >
-        {name}
+        <a href={href} target={href === '#' ? '_self' : '_blank'}>
+          {name}
+        </a>
       </motion.button>
       {active && (
         <motion.div

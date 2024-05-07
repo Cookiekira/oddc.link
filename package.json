@@ -19,6 +19,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.7.2",
     "@cloudflare/next-on-pages": "^1.11.2",
+    "@iconify-json/mdi": "^1.1.66",
+    "@iconify/tailwind": "^1.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

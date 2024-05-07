@@ -5,7 +5,7 @@ export const introduction = [
   'An enthusiast of cutting edge technologies.',
   'An open-source contributor.',
   'A Dotaer.',
-  'A music fun of Hikaru Utada.',
+  'A music fan of Hikaru Utada.',
 ];
 
 export const links = [

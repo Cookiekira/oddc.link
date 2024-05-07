@@ -6,11 +6,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'OddC',
   description: "Welcome to OddC's personal page",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    viewportFit: 'cover',
-  },
 };
 
 export default function RootLayout({

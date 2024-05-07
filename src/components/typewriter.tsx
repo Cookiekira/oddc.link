@@ -6,7 +6,7 @@ type TypewriterProps = {
   snippets: string[];
 };
 
-export default function Typewriter({ snippets }: TypewriterProps) {
+export function Typewriter({ snippets }: TypewriterProps) {
   const textIndex = useMotionValue(0);
   const baseText = useTransform(textIndex, (latest) => snippets[latest] || '');
   const count = useMotionValue(0);
@@ -16,6 +16,7 @@ export default function Typewriter({ snippets }: TypewriterProps) {
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
+    // Set to 60 to keep the same speed for all texts
     const control = animate(count, 60, {
       type: 'tween',
       duration: 2,

@@ -79,7 +79,7 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
         onHoverStart={onHover}
         {...props}
       >
-        <a href={href} target={href === '#' ? '_self' : '_blank'}>
+        <a className="w-full" href={href} target={href === '#' ? '_self' : '_blank'}>
           {name}
         </a>
       </motion.button>

@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+import { addDynamicIconSelectors } from '@iconify/tailwind';
 
 const config: Config = {
   content: [
@@ -8,16 +9,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
         bg: '#e8fced',
       },
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [addDynamicIconSelectors()],
+};
+export default config;

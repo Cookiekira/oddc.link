@@ -1,11 +1,12 @@
-import Typewriter from '@/components/typewriter';
-import { introduction } from '@/data/me';
+import { Links } from '@/components/Links';
+import { Typewriter } from '@/components/Typewriter';
+import { introduction, links } from '@/data/me';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col justify-center">
       <main className="flex flex-col items-center px-4 py-16">
-        <section className="relative mb-6 mt-12 text-4xl font-bold md:mb-12 md:mt-24 md:text-6xl">
+        <section className="relative mb-6 mt-6 text-4xl font-bold md:mb-12 md:mt-10 md:text-6xl">
           👋&nbsp; Hi, I&apos;m{' '}
           <div className="group inline-flex">
             <div
@@ -28,11 +29,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex h-6 justify-start">
+        <section className="flex mb-10">
           <Typewriter snippets={introduction} />
         </section>
 
-        {/* <Links links={links} /> */}
+        <section className="flex">
+          <Links links={links} />
+        </section>
       </main>
     </div>
   );

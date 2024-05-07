@@ -1,5 +1,5 @@
 import { Links } from '@/components/Links';
-import { Typewriter } from '@/components/Typewriter';
+import { Typewriter } from '../components/Typewriter';
 import { introduction, links } from '@/data/me';
 
 export default function Home() {

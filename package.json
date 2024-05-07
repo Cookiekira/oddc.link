@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy:pages":"pnpm build && pnpm dlx wrangler pages deploy out"
+    "deploy:pages": "pnpm build && pnpm wrangler pages deploy out"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -29,7 +29,8 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^3.53.1"
   },
   "packageManager": "pnpm@9.1.0+sha256.22e36fba7f4880ecf749a5ca128b8435da085ecd49575e7fb9e64d6bf4fad394"
 }

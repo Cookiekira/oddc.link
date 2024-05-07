@@ -73,7 +73,7 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
     <div className={cn('relative', 'flex', 'w-full', 'items-center', 'justify-center')}>
       <motion.button
         type="button"
-        className="w-full px-4 text-left"
+        className="w-full px-4 text-left flex"
         initial={{ opacity: 0.6 }}
         whileHover={{ opacity: 1 }}
         onHoverStart={onHover}

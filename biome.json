@@ -21,11 +21,7 @@
     ]
   },
   "formatter": {
-    "enabled": true,
-    "lineWidth": 120,
-    "indentStyle": "space",
-    "lineEnding": "lf",
-    "attributePosition": "auto"
+    "enabled": false
   },
   "javascript": {
     "formatter": {

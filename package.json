@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "biome lint src/**/*.{ts,tsx}",
     "deploy:pages": "pnpm build && pnpm wrangler pages deploy out"
   },
   "dependencies": {

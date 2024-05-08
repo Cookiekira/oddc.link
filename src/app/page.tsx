@@ -18,10 +18,10 @@ export default function Home() {
               &lt;OddC/&gt;
             </div>
             <div
-              className="absolute translate-x-full opacity-0 transition-all delay-100 duration-500 
-              ease-in-out
+              className="absolute opacity-0 transition-all delay-100 duration-500 ease-in-out 
               group-hover:translate-x-0
               group-hover:opacity-100
+              md:translate-x-full
             "
             >
               Humphrey

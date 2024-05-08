@@ -47,6 +47,7 @@ export function Menu({ isOpen, menus }: MenuProps) {
         },
       }}
       style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
+      onHoverEnd={() => setIsHoverIndex(-1)}
     >
       {menus.map((menu, index) => (
         <motion.li key={menu.name} variants={itemVariants}>
@@ -73,7 +74,7 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
     <div className={cn('relative', 'flex', 'w-full', 'items-center', 'justify-center')}>
       <motion.button
         type="button"
-        className="w-full px-4 text-left flex"
+        className="flex w-full px-4 text-left"
         initial={{ opacity: 0.6 }}
         whileHover={{ opacity: 1 }}
         onHoverStart={onHover}

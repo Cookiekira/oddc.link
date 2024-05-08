@@ -7,6 +7,12 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'OddC',
   description: "Welcome to OddC's personal page",
+  openGraph: {
+    title: 'OddC',
+    description: "Welcome to OddC's personal page",
+    type: 'website',
+    url: 'https://oddc.link',
+  },
 };
 
 export const viewport: Viewport = {

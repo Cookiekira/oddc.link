@@ -33,7 +33,7 @@ export default function Home() {
           <Typewriter snippets={introduction} />
         </section>
 
-        <section className="flex">
+        <section className="mt-10 flex">
           <Links links={links} />
         </section>
       </main>

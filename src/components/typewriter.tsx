@@ -15,7 +15,7 @@ export function Typewriter({ snippets }: TypewriterProps) {
   const displayText = useTransform(rounded, (latest) => baseText.get().slice(0, latest));
   const updatedThisRound = useMotionValue(true);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  // biome-ignore lint/correctness/useExhaustiveDependencies: snippets is a constant
   useEffect(() => {
     // Set to 60 to keep the same speed for all texts
     const control = animate(count, 60, {

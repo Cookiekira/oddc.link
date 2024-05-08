@@ -77,6 +77,7 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
         className="flex w-full px-4 text-left"
         initial={{ opacity: 0.6 }}
         whileHover={{ opacity: 1 }}
+        whileTap={{ opacity: 1 }}
         onHoverStart={onHover}
         {...props}
       >

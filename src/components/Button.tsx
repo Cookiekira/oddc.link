@@ -16,6 +16,7 @@ export const Button = memo(function Button({ href = '#', active, onHover, onTap,
         type="button"
         initial={{ opacity: 0.6 }}
         whileHover={{ scale: 1.1, opacity: 1 }}
+        whileTap={{ scale: 1.1, opacity: 1 }}
         onHoverStart={onHover}
         onTap={onTap}
       >

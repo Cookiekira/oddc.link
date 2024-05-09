@@ -18,7 +18,7 @@ type MenuProps = {
     url: string;
   }[];
 };
-export function Menu({ isOpen, menus }: MenuProps) {
+export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
   const [isHoverIndex, setIsHoverIndex] = useState(-1);
 
   return (
@@ -61,7 +61,7 @@ export function Menu({ isOpen, menus }: MenuProps) {
       ))}
     </motion.ul>
   );
-}
+});
 
 type ItemProps = {
   active: boolean;

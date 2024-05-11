@@ -34,7 +34,7 @@ export const links = [
 export const menus = [
   {
     name: 'Blog',
-    url: 'https://craft.oddc.icu',
+    url: 'https://oddc.link/blog',
   },
   {
     name: 'Telegram',

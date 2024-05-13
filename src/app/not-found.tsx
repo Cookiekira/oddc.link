@@ -5,9 +5,9 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col justify-center">
       <main className="flex flex-col items-center">
-        <section className="relative mb-6 mt-6 font-bold ">
+        <section className="h-54 relative mb-6 mt-6 w-96 font-bold">
           {/* Logo by @SAWARATSUKI */}
-          <img src="/404 NotFound.png" alt="404" className="w-96" />
+          <img src="/404 NotFound.png" alt="404" />
         </section>
 
         <section className="flex gap-4">

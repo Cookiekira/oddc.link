@@ -1,5 +1,12 @@
-export const onRequest: PagesFunction = async (context) => {
-  const blogUrl = new URL('https://oddc.craft.me');
+interface Env {
+  BlogURL: string;
+}
+
+export const onRequest: PagesFunction<Env> = async (context) => {
+  if (!context.env.BlogURL) {
+    return new Response('BlogUrl is not defined', { status: 500 });
+  }
+  const blogUrl = new URL(context.env.BlogURL);
   const path = context.params.catchall;
   if (path) {
     blogUrl.pathname = path instanceof Array ? path.join('/') : path;

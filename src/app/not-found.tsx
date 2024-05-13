@@ -1,7 +1,9 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
+  const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col justify-center">
       <main className="flex flex-col items-center">
@@ -11,16 +13,22 @@ export default function NotFound() {
         </section>
 
         <section className="flex gap-4">
-          <span
-            className="icon-[mdi--arrow-left] cursor-pointer text-3xl
-           
+          <button type="button">
+            <span
+              className="icon-[mdi--arrow-left] text-3xl
             font-bold opacity-60 hover:opacity-100"
-            onClick={() => window.history.back()}
-          />
+              onClick={router.back}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  router.back();
+                }
+              }}
+            />
+          </button>
 
           <Link href="/">
             <span
-              className="icon-[mdi--home] cursor-pointer text-3xl
+              className="icon-[mdi--home] text-3xl
             font-bold opacity-60 hover:opacity-100"
             />
           </Link>

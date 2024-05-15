@@ -30,6 +30,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to top, rgb(var(--background-end-rgb)), transparent 80%) rgb(var(--background-start-rgb));
   overflow: hidden;
+  min-height: 100vh;
 }
 
 @layer components {

@@ -1,5 +1,5 @@
 import { type Variants, motion } from 'framer-motion';
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const itemVariants: Variants = {
@@ -47,14 +47,14 @@ export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
         },
       }}
       style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
-      onHoverEnd={() => setIsHoverIndex(-1)}
+      onHoverEnd={useCallback(() => setIsHoverIndex(-1), [])}
     >
       {menus.map((menu, index) => (
         <motion.li key={menu.name} variants={itemVariants}>
           <Item
             name={menu.name}
             active={isHoverIndex === index}
-            onHover={() => setIsHoverIndex(index)}
+            onHover={useCallback(() => setIsHoverIndex(index), [index])}
             href={menu.url}
           />
         </motion.li>

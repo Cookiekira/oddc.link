@@ -24,7 +24,7 @@ export default function Home() {
               md:translate-x-full
             "
             >
-              Humphrey
+              Hang
             </div>
           </div>
         </section>

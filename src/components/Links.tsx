@@ -24,6 +24,7 @@ export function Links(props: LinksProps) {
       {props.links.map((link, index) => {
         return (
           <Button
+            aria-label={link.name}
             key={link.name}
             icon={link.icon}
             active={isHoverIndex === index}

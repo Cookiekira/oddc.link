@@ -21,6 +21,10 @@ export function MenuIcon(props: { className?: string }) {
   return <span className={cn('icon-[mdi--dots-horizontal]', props.className)} />;
 }
 
+export function BlogIcon(props: { className?: string }) {
+  return <span className={cn('icon-[mdi--blogger]', props.className)} />;
+}
+
 export const Icon = memo(function Icon(props: { name: string; className?: string }) {
   const className = cn('align-middle', props.className);
   switch (props.name) {
@@ -34,6 +38,8 @@ export const Icon = memo(function Icon(props: { name: string; className?: string
       return <TwitterIcon className={className} />;
     case 'menu':
       return <MenuIcon className={className} />;
+    case 'blog':
+      return <BlogIcon className={className} />;
     default:
       return null;
   }

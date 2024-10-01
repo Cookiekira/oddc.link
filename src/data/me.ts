@@ -15,9 +15,9 @@ export const links = [
     icon: 'github',
   },
   {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/hang-wang-a108b7297/',
-    icon: 'linkedin',
+    name: 'Blog',
+    url: 'https://oddc.link/blog',
+    icon: 'blog',
   },
   {
     name: 'Twitter',
@@ -33,8 +33,8 @@ export const links = [
 
 export const menus = [
   {
-    name: 'Blog',
-    url: 'https://oddc.link/blog',
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/hang-wang-a108b7297/',
   },
   {
     name: 'Telegram',

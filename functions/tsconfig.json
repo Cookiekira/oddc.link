@@ -16,7 +16,8 @@
       "esnext"
     ],
     "types": [
-      "@cloudflare/workers-types"
-    ]
-  }
+      "@cloudflare/workers-types",
+      "./worker-configuration.d.ts"
+    ],
+  },
 }

@@ -44,4 +44,8 @@ export const menus = [
     name: 'Bilibili',
     url: 'https://space.bilibili.com/6350400',
   },
+  {
+    name: 'Resume',
+    url: '/resume',
+  }
 ];

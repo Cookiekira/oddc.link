@@ -41,10 +41,6 @@ export const menus = [
     url: 'https://t.me/cookiekiraw',
   },
   {
-    name: 'Bilibili',
-    url: 'https://space.bilibili.com/6350400',
-  },
-  {
     name: 'Resume',
     url: '/resume',
   }

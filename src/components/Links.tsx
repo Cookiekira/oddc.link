@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import {  useState } from 'react';
 import { Button } from './Button';
 import { Menu } from './Menu';
 import { menus } from '@/data/me';
@@ -20,7 +20,7 @@ export function Links(props: LinksProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="relative flex" onMouseLeave={useCallback(() => setIsHoverIndex(-1), [])}>
+    <div className="relative flex" onMouseLeave={() => setIsHoverIndex(-1)}>
       {props.links.map((link, index) => {
         return (
           <Button
@@ -28,7 +28,7 @@ export function Links(props: LinksProps) {
             key={link.name}
             icon={link.icon}
             active={isHoverIndex === index}
-            onHover={useCallback(() => setIsHoverIndex(index), [index])}
+            onHover={() => setIsHoverIndex(index)}
             href={link.url}
           />
         );
@@ -36,10 +36,10 @@ export function Links(props: LinksProps) {
 
       <Button
         icon="menu"
-        onHover={useCallback(() => {
+        onHover={() => {
           setIsHoverIndex(MENU_HOVER_INDEX);
-        }, [])}
-        onTap={useCallback(() => setIsMenuOpen(!isMenuOpen), [isMenuOpen])}
+        }}
+        onTap={() => setIsMenuOpen(!isMenuOpen)}
         active={isHoverIndex === MENU_HOVER_INDEX}
       />
 

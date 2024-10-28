@@ -9,7 +9,6 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         'Content-Type': 'application/pdf',
       },
     });
-  } else {
-    return new Response('Resume not found', { status: 404 });
   }
+    return new Response('Resume not found', { status: 404 });
 };

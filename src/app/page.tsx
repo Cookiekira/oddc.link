@@ -17,7 +17,7 @@ export default function Home() {
             text={
               <TextRotate
                 mainClassName="w-40 md:w-60"
-                texts={[`<OddC/>`, ` Hang`]}
+                texts={['<OddC/>', ' Hang']}
                 staggerFrom={'first'}
                 staggerDuration={0.1}
                 transition={{ type: 'spring', damping: 30, stiffness: 200 }}

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome lint src/**/*.{ts,tsx}",
-    "lint:fix": "biome lint src/**/*.{ts,tsx} --apply",
+    "lint:fix": "biome lint src/**/*.{ts,tsx} --write",
     "deploy:pages": "pnpm build && pnpm wrangler pages deploy out"
   },
   "dependencies": {

@@ -16,7 +16,7 @@ export const links = [
 	},
 	{
 		name: "Blog",
-		url: "https://oddc.link/blog",
+		url: "/blog",
 		icon: "blog",
 	},
 	{

@@ -1,48 +1,47 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.7.2/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    },
-    "ignore": [
-      "dist",
-      "output",
-      "public",
-      "temp",
-      "packages-lock.json",
-      "pnpm-lock.yaml",
-      "__snapshots__",
-      "!.github",
-      "!.vscode"
-    ]
-  },
-  "formatter": {
-    "enabled": false
-  },
-  "javascript": {
-    "formatter": {
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "asNeeded",
-      "bracketSpacing": true,
-      "bracketSameLine": false,
-      "quoteStyle": "single",
-      "attributePosition": "auto"
-    }
-  },
-  "json": {
-    "formatter": {
-      "enabled": true
-    }
-  },
-  "css": {
-    "formatter": {
-      "enabled": true
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [
+			"node_modules",
+			"dist",
+			"build",
+			"out",
+			"coverage",
+			".next",
+			".open-next",
+			".vercel",
+			".wrangler",
+			"components/ui",
+			"*.d.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 120,
+		"indentWidth": 2,
+		"lineEnding": "lf"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single",
+			"trailingCommas": "all"
+		}
+	}
 }

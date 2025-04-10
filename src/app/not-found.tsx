@@ -10,7 +10,7 @@ export default function NotFound() {
       <main className='flex flex-col items-center'>
         <section className='h-54 relative mb-6 mt-6 w-96 font-bold'>
           {/* Logo by @SAWARATSUKI */}
-          <Image src='/404 NotFound.png' alt='404' />
+          <Image src='/404 NotFound.png' alt='404' fill />
         </section>
 
         <section className='flex gap-4'>

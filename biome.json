@@ -17,7 +17,8 @@
 			".open-next",
 			".vercel",
 			".wrangler",
-			"components/ui"
+			"components/ui",
+			"*.d.ts"
 		]
 	},
 	"formatter": {
@@ -38,8 +39,8 @@
 	},
 	"javascript": {
 		"formatter": {
-			"semicolons": "always",
-			"quoteStyle": "double",
+			"semicolons": "asNeeded",
+			"quoteStyle": "single",
 			"trailingCommas": "all"
 		}
 	}

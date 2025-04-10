@@ -1,17 +1,17 @@
-import { motion } from "motion/react";
-import { Icon } from "./Icons";
-import { memo } from "react";
-import { cn } from "@/lib/utils";
+import { motion } from 'motion/react'
+import { Icon } from './Icons'
+import { memo } from 'react'
+import { cn } from '@/lib/utils'
 
 type ButtonProps = {
-	active: boolean;
-	onHover: () => void;
-	icon: string;
-	href?: string;
-} & React.ComponentPropsWithRef<typeof motion.button>;
-export const Button = memo(function Button({ href = "#", active, onHover, onTap, icon }: ButtonProps) {
+	active: boolean
+	onHover: () => void
+	icon: string
+	href?: string
+} & React.ComponentPropsWithRef<typeof motion.button>
+export const Button = memo(function Button({ href = '#', active, onHover, onTap, icon }: ButtonProps) {
 	return (
-		<div className={cn("relative flex w-10 items-center justify-center")}>
+		<div className={cn('relative flex w-10 items-center justify-center')}>
 			<motion.button
 				type="button"
 				initial={{ opacity: 0.6 }}
@@ -20,7 +20,7 @@ export const Button = memo(function Button({ href = "#", active, onHover, onTap,
 				onHoverStart={onHover}
 				onTap={onTap}
 			>
-				<a href={href} target={href === "#" ? "_self" : "_blank"}>
+				<a href={href} target={href === '#' ? '_self' : '_blank'}>
 					{icon && <Icon name={icon} className="h-8 w-8" />}
 				</a>
 			</motion.button>
@@ -34,5 +34,5 @@ export const Button = memo(function Button({ href = "#", active, onHover, onTap,
 				/>
 			)}
 		</div>
-	);
-});
+	)
+})

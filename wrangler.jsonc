@@ -52,7 +52,7 @@
 	"r2_buckets": [
 		{
 			"binding": "BUCKET",
-			"bucket_name": "homepage",
+			"bucket_name": "homepage"
 		}
-	],
+	]
 }

@@ -7,7 +7,18 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["node_modules", "dist", "build", "out", "coverage", ".next", ".vercel", ".wrangler"]
+		"ignore": [
+			"node_modules",
+			"dist",
+			"build",
+			"out",
+			"coverage",
+			".next",
+			".open-next",
+			".vercel",
+			".wrangler",
+			"components/ui"
+		]
 	},
 	"formatter": {
 		"enabled": true,

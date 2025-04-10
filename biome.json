@@ -43,5 +43,10 @@
 			"quoteStyle": "single",
 			"trailingCommas": "all"
 		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
 	}
 }

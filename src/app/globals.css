@@ -72,10 +72,8 @@ body {
 	}
 }
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+@utilities text-balance {
+	text-wrap: balance;
 }
 
 @layer base {
@@ -137,8 +135,5 @@ body {
 @layer base {
 	* {
 		@apply box-border;
-	}
-	body {
-		/* @apply bg-background text-foreground; */
 	}
 }

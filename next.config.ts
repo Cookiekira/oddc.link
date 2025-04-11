@@ -10,8 +10,8 @@ const nextConfig: NextConfig = {
 					destination: process.env.BLOG_URL || '',
 				},
 				{
-					source: '/blog/:slug',
-					destination: process.env.BLOG_URL ? `${process.env.BLOG_URL}/:slug` : '',
+					source: '/blog/:slug*',
+					destination: process.env.BLOG_URL ? `${process.env.BLOG_URL}/:slug*` : '',
 				},
 			],
 		}

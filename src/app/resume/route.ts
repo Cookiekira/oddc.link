@@ -5,7 +5,7 @@ export async function GET() {
 	const resume = await env.BUCKET.get(env.RESUME_FILENAME)
 
 	if (!resume) {
-		return new Response(`${env.RESUME_FILENAME} Not found` , { status: 404 })
+		return new Response(`${env.RESUME_FILENAME} Not found`, { status: 404 })
 	}
 
 	return new Response(resume.body, {

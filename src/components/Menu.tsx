@@ -1,4 +1,4 @@
-import { type Variants, motion } from 'motion/react'
+import { type Variants, m } from 'motion/react'
 import { memo, useState } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -22,7 +22,7 @@ export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
 	const [isHoverIndex, setIsHoverIndex] = useState(-1)
 
 	return (
-		<motion.ul
+		<m.ul
 			className="menu"
 			initial={'closed'}
 			animate={isOpen ? 'open' : 'closed'}
@@ -50,16 +50,16 @@ export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
 			onHoverEnd={() => setIsHoverIndex(-1)}
 		>
 			{menus.map((menu, index) => (
-				<motion.li key={menu.name} variants={itemVariants}>
+				<m.li key={menu.name} variants={itemVariants}>
 					<Item
 						name={menu.name}
 						active={isHoverIndex === index}
 						onHover={() => setIsHoverIndex(index)}
 						href={menu.url}
 					/>
-				</motion.li>
+				</m.li>
 			))}
-		</motion.ul>
+		</m.ul>
 	)
 })
 
@@ -68,11 +68,11 @@ type ItemProps = {
 	onHover: () => void
 	name: string
 	href?: string
-} & React.ComponentPropsWithRef<typeof motion.button>
+} & React.ComponentPropsWithRef<typeof m.button>
 export const Item = memo(function Item({ href = '#', name, active, onHover, ...props }: ItemProps) {
 	return (
 		<div className={cn('relative', 'flex', 'w-full', 'items-center', 'justify-center')}>
-			<motion.button
+			<m.button
 				type="button"
 				className="flex w-full px-4 text-left"
 				initial={{ opacity: 0.6 }}
@@ -84,9 +84,9 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
 				<a className="w-full" href={href} target={href === '#' ? '_self' : '_blank'}>
 					{name}
 				</a>
-			</motion.button>
+			</m.button>
 			{active && (
-				<motion.div
+				<m.div
 					layoutId="bg"
 					transition={{
 						duration: 0.2,

@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from "react";
-import { AnimatePresence, type AnimatePresenceProps, motion, type MotionProps, type Transition } from "motion/react";
+import { AnimatePresence, type AnimatePresenceProps,  m, type MotionProps, type Transition } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -167,7 +167,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 		}, [next, rotationInterval, auto]);
 
 		return (
-			<motion.span
+			<m.span
 				className={cn("flex flex-wrap whitespace-pre-wrap", mainClassName)}
 				{...props}
 				layout
@@ -176,7 +176,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 				<span className="sr-only">{texts[currentTextIndex]}</span>
 
 				<AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
-					<motion.div
+					<m.div
 						key={currentTextIndex}
 						className={cn("flex flex-wrap", splitBy === "lines" && "flex-col w-full")}
 						layout
@@ -196,7 +196,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 							return (
 								<span key={wordIndex} className={cn("inline-flex", splitLevelClassName)}>
 									{wordObj.characters.map((char, charIndex) => (
-										<motion.span
+										<m.span
 											initial={initial}
 											animate={animate}
 											exit={exit}
@@ -211,15 +211,15 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 											className={cn("inline-block", elementLevelClassName)}
 										>
 											{char}
-										</motion.span>
+										</m.span>
 									))}
 									{wordObj.needsSpace && <span className="whitespace-pre"> </span>}
 								</span>
 							);
 						})}
-					</motion.div>
+					</m.div>
 				</AnimatePresence>
-			</motion.span>
+			</m.span>
 		);
 	},
 );

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Icon } from './Icons'
 import { memo } from 'react'
 import { cn } from '@/lib/utils'
@@ -8,11 +8,11 @@ type ButtonProps = {
 	onHover: () => void
 	icon: string
 	href?: string
-} & React.ComponentPropsWithRef<typeof motion.button>
+} & React.ComponentPropsWithRef<typeof m.button>
 export const Button = memo(function Button({ href = '#', active, onHover, onTap, icon }: ButtonProps) {
 	return (
 		<div className={cn('relative flex w-10 items-center justify-center')}>
-			<motion.button
+			<m.button
 				type="button"
 				initial={{ opacity: 0.6 }}
 				whileHover={{ scale: 1.1, opacity: 1 }}
@@ -23,9 +23,9 @@ export const Button = memo(function Button({ href = '#', active, onHover, onTap,
 				<a href={href} target={href === '#' ? '_self' : '_blank'}>
 					{icon && <Icon name={icon} className="h-8 w-8" />}
 				</a>
-			</motion.button>
+			</m.button>
 			{active && (
-				<motion.div
+				<m.div
 					layoutId="bg"
 					transition={{
 						duration: 0.2,

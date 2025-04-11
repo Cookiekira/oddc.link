@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useMotionValue, useTransform, animate } from 'motion/react'
+import { m, useMotionValue, useTransform, animate } from 'motion/react'
 import { useEffect } from 'react'
 
 type TypewriterProps = {
@@ -40,8 +40,8 @@ export function Typewriter({ snippets }: TypewriterProps) {
 
 	return (
 		<>
-			<motion.span className="text-sm  md:text-xl">{displayText}</motion.span>
-			<motion.span
+			<m.span className="text-sm  md:text-xl">{displayText}</m.span>
+			<m.span
 				className="text-sm font-bold text-fuchsia-500 md:text-xl"
 				animate={{
 					opacity: [0, 1, 0],
@@ -52,7 +52,7 @@ export function Typewriter({ snippets }: TypewriterProps) {
 				}}
 			>
 				|
-			</motion.span>
+			</m.span>
 		</>
 	)
 }

@@ -1,7 +1,7 @@
 {
 	"files.associations": {
 		"wrangler.json": "jsonc"
-  },
-  "typescript.experimental.useTsgo": true,
-  "oxc.enable": true
+	},
+	"typescript.experimental.useTsgo": true,
+	"oxc.enable": true
 }

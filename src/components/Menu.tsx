@@ -1,6 +1,8 @@
-import { type Variants, m } from 'motion/react'
-import { memo, useState } from 'react'
+'use client'
+
 import { cn } from '@/lib/utils'
+import { type Variants, m } from 'motion/react'
+import { useState } from 'react'
 
 const itemVariants: Variants = {
 	open: {
@@ -18,7 +20,8 @@ type MenuProps = {
 		url: string
 	}[]
 }
-export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
+
+export function Menu({ isOpen, menus }: MenuProps) {
 	const [isHoverIndex, setIsHoverIndex] = useState(-1)
 
 	return (
@@ -61,33 +64,30 @@ export const Menu = memo(function Menu({ isOpen, menus }: MenuProps) {
 			))}
 		</m.ul>
 	)
-})
+}
 
 type ItemProps = {
 	active: boolean
 	onHover: () => void
 	name: string
 	href?: string
-} & React.ComponentPropsWithRef<typeof m.button>
-export const Item = memo(function Item({ href = '#', name, active, onHover, ...props }: ItemProps) {
+}
+
+function Item({ href = '#', name, active, onHover }: ItemProps) {
 	return (
 		<div className={cn('relative', 'flex', 'w-full', 'items-center', 'justify-center')}>
-			<m.button
-				type="button"
-				className="flex w-full px-4 text-left"
-				initial={{ opacity: 0.6 }}
-				whileHover={{ opacity: 1 }}
-				whileTap={{ opacity: 1 }}
-				onHoverStart={onHover}
-				{...props}
+			<a
+				className="flex w-full px-4 text-left opacity-60 transition-opacity hover:opacity-100"
+				href={href}
+				target={href === '#' ? '_self' : '_blank'}
+				rel={href === '#' ? undefined : 'noopener noreferrer'}
+				onMouseEnter={onHover}
 			>
-				<a className="w-full" href={href} target={href === '#' ? '_self' : '_blank'}>
-					{name}
-				</a>
-			</m.button>
+				{name}
+			</a>
 			{active && (
 				<m.div
-					layoutId="bg"
+					layoutId="menu-bg"
 					transition={{
 						duration: 0.2,
 					}}
@@ -96,4 +96,4 @@ export const Item = memo(function Item({ href = '#', name, active, onHover, ...p
 			)}
 		</div>
 	)
-})
+}

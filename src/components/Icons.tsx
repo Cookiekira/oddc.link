@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import { memo } from 'react'
 
 export function GitHubIcon(props: { className?: string }) {
 	return <span className={cn('icon-[mdi--github]', props.className)} />
@@ -25,22 +24,17 @@ export function BlogIcon(props: { className?: string }) {
 	return <span className={cn('icon-[mdi--blogger]', props.className)} />
 }
 
-export const Icon = memo(function Icon(props: { name: string; className?: string }) {
+const iconMap: Record<string, (props: { className?: string }) => React.ReactElement> = {
+	github: GitHubIcon,
+	email: EmailIcon,
+	linkedin: LinkedInIcon,
+	twitter: TwitterIcon,
+	menu: MenuIcon,
+	blog: BlogIcon,
+}
+
+export function Icon(props: { name: string; className?: string }) {
 	const className = cn('align-middle', props.className)
-	switch (props.name) {
-		case 'github':
-			return <GitHubIcon className={className} />
-		case 'email':
-			return <EmailIcon className={className} />
-		case 'linkedin':
-			return <LinkedInIcon className={className} />
-		case 'twitter':
-			return <TwitterIcon className={className} />
-		case 'menu':
-			return <MenuIcon className={className} />
-		case 'blog':
-			return <BlogIcon className={className} />
-		default:
-			return null
-	}
-})
+	const IconComponent = iconMap[props.name]
+	return IconComponent ? <IconComponent className={className} /> : null
+}

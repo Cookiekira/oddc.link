@@ -1,66 +1,64 @@
-"use client";
+'use client'
 
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from "react";
-import { AnimatePresence, type AnimatePresenceProps,  m, type MotionProps, type Transition } from "motion/react";
+import { type Ref, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react'
+import { AnimatePresence, type AnimatePresenceProps, m, type MotionProps, type Transition } from 'motion/react'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 interface TextRotateProps {
-	texts: string[];
-	rotationInterval?: number;
-	initial?: MotionProps["initial"];
-	animate?: MotionProps["animate"];
-	exit?: MotionProps["exit"];
-	animatePresenceMode?: AnimatePresenceProps["mode"];
-	animatePresenceInitial?: boolean;
-	staggerDuration?: number;
-	staggerFrom?: "first" | "last" | "center" | number | "random";
-	transition?: Transition;
-	loop?: boolean; // Whether to start from the first text when the last one is reached
-	auto?: boolean; // Whether to start the animation automatically
-	splitBy?: "words" | "characters" | "lines" | string;
-	onNext?: (index: number) => void;
-	mainClassName?: string;
-	splitLevelClassName?: string;
-	elementLevelClassName?: string;
+	texts: string[]
+	rotationInterval?: number
+	initial?: MotionProps['initial']
+	animate?: MotionProps['animate']
+	exit?: MotionProps['exit']
+	animatePresenceMode?: AnimatePresenceProps['mode']
+	animatePresenceInitial?: boolean
+	staggerDuration?: number
+	staggerFrom?: 'first' | 'last' | 'center' | number | 'random'
+	transition?: Transition
+	loop?: boolean
+	auto?: boolean
+	splitBy?: 'words' | 'characters' | 'lines' | string
+	onNext?: (index: number) => void
+	mainClassName?: string
+	splitLevelClassName?: string
+	elementLevelClassName?: string
+	ref?: Ref<TextRotateRef>
 }
 
 export interface TextRotateRef {
-	next: () => void;
-	previous: () => void;
-	jumpTo: (index: number) => void;
-	reset: () => void;
+	next: () => void
+	previous: () => void
+	jumpTo: (index: number) => void
+	reset: () => void
 }
 
 interface WordObject {
-	characters: string[];
-	needsSpace: boolean;
+	characters: string[]
+	needsSpace: boolean
 }
 
-const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
-	(
-		{
-			texts,
-			transition = { type: "spring", damping: 25, stiffness: 300 },
-			initial = { y: "100%", opacity: 0 },
-			animate = { y: 0, opacity: 1 },
-			exit = { y: "-120%", opacity: 0 },
-			animatePresenceMode = "wait",
-			animatePresenceInitial = false,
-			rotationInterval = 2000,
-			staggerDuration = 0,
-			staggerFrom = "first",
-			loop = true,
-			auto = true,
-			splitBy = "characters",
-			onNext,
-			mainClassName,
-			splitLevelClassName,
-			elementLevelClassName,
-			...props
-		},
-		ref,
-	) => {
+function TextRotate({
+	texts,
+	transition = { type: 'spring', damping: 25, stiffness: 300 },
+	initial = { y: '100%', opacity: 0 },
+	animate = { y: 0, opacity: 1 },
+	exit = { y: '-120%', opacity: 0 },
+	animatePresenceMode = 'wait',
+	animatePresenceInitial = false,
+	rotationInterval = 2000,
+	staggerDuration = 0,
+	staggerFrom = 'first',
+	loop = true,
+	auto = true,
+	splitBy = 'characters',
+	onNext,
+	mainClassName,
+	splitLevelClassName,
+	elementLevelClassName,
+	ref,
+	...props
+}: TextRotateProps) {
 		const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
 		// handy function to split text into characters with support for unicode and emojis
@@ -210,20 +208,17 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 											}}
 											className={cn("inline-block", elementLevelClassName)}
 										>
-											{char}
-										</m.span>
-									))}
-									{wordObj.needsSpace && <span className="whitespace-pre"> </span>}
-								</span>
-							);
-						})}
-					</m.div>
-				</AnimatePresence>
+							{char}
+						</m.span>
+					))}
+					{wordObj.needsSpace && <span className="whitespace-pre"> </span>}
+				</span>
+			)
+		})}
+	</m.div>
+</AnimatePresence>
 			</m.span>
-		);
-	},
-);
+		)
+}
 
-TextRotate.displayName = "TextRotate";
-
-export default TextRotate;
+export default TextRotate

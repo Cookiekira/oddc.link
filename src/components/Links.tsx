@@ -13,22 +13,20 @@ type LinksProps = {
 	}[]
 }
 
-const MENU_HOVER_INDEX = 114514
-
 export function Links({ links }: LinksProps) {
-	const [isHoverIndex, setIsHoverIndex] = useState(-1)
+	const [hoverIndex, setHoverIndex] = useState<number | 'menu' | null>(null)
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	return (
-		<div className="relative flex" onMouseLeave={() => setIsHoverIndex(-1)}>
+		<div className="relative flex" onMouseLeave={() => setHoverIndex(null)}>
 			{links.map((link, index) => {
 				return (
 					<Button
 						aria-label={link.name}
 						key={link.name}
 						icon={link.icon}
-						active={isHoverIndex === index}
-						onHover={() => setIsHoverIndex(index)}
+						active={hoverIndex === index}
+						onHover={() => setHoverIndex(index)}
 						href={link.url}
 					/>
 				)
@@ -37,10 +35,10 @@ export function Links({ links }: LinksProps) {
 			<Button
 				icon="menu"
 				onHover={() => {
-					setIsHoverIndex(MENU_HOVER_INDEX)
+					setHoverIndex('menu')
 				}}
 				onTap={() => setIsMenuOpen(!isMenuOpen)}
-				active={isHoverIndex === MENU_HOVER_INDEX}
+				active={hoverIndex === 'menu'}
 			/>
 
 			<Menu isOpen={isMenuOpen} menus={menus} />

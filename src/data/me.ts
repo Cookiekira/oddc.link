@@ -40,8 +40,4 @@ export const menus = [
 		name: 'Telegram',
 		url: 'https://t.me/cookiekiraw',
 	},
-	{
-		name: 'Resume',
-		url: '/resume',
-	},
 ]
